@@ -33,4 +33,5 @@ def menu():
             case _:
                 print("Opcion no valida ,intente de nuevo")
                 opcion = int(input())
+    
 menu()
