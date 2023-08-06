@@ -1,7 +1,5 @@
+from cargar_inventario import cargar_inventario
 def menu():
-    print("---------------------------------------------------")
-    print("Practica 1 - Lenguajes formales y programacion")
-    print("---------------------------------------------------")
     print("# Sistema de inventario:")
     print("")
     print()
@@ -21,6 +19,10 @@ def menu():
             case 1:
                 #? Cargar inventario
                 print("Cargar inventario inicial")
+                cargar_inventario.crear_inventario()
+                print("------------------------------------")
+                print("Volviendo al menu.")
+                print("------------------------------------")
                 menu()
             case 2:
                 #? Cargar instrucciones de movimiento
@@ -29,6 +31,7 @@ def menu():
             case 3:
                 #? Crear informe de inventario
                 print("Crear informe de inventario")
+                cargar_inventario.mostrar_inventario()
                 menu()
             case 4:
                 #? Salir
@@ -39,4 +42,10 @@ def menu():
                 opcion = int(input())
         break
     return
+
+
+
+print("---------------------------------------------------")
+print("Practica 1 - Lenguajes formales y programacion")
+print("---------------------------------------------------")
 menu()
