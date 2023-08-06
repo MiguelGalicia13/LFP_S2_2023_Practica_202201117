@@ -1,4 +1,6 @@
-from cargar_inventario import cargar_inventario
+from tkinter import Tk
+from tkinter.filedialog import askopenfilename
+inventario = []
 def menu():
     print("# Sistema de inventario:")
     print("")
@@ -19,7 +21,28 @@ def menu():
             case 1:
                 #? Cargar inventario
                 print("Cargar inventario inicial")
-                cargar_inventario.crear_inventario()
+                Tk().withdraw() #! Abre un explorador de Archivos
+                #! Extensiones de archivos permitidas
+                extensiones = [("Archivo INV", "*.inv")]
+                #! Filtro para encontrar solo archivos con extension .inv
+                filename = askopenfilename(filetypes=extensiones)
+                if filename:
+                    with open(filename, 'r') as archivo:
+                        print("Creando productos")
+                        for linea in archivo:
+                            if linea.startswith("crear_producto "):
+                                linea = linea[len("crear_producto "):]  #! elimina la palbara "crear_producto "
+                            datos_producto = linea.strip().split(';')
+                            producto = {
+                                'nombre': datos_producto[0],
+                                'cantidad': int(datos_producto[1]),
+                                'precio_unitario': float(datos_producto[2]),
+                                'ubicacion': datos_producto[3]
+                            }
+                            inventario.append(producto)
+                    print("Inventario creado exitosamente.")
+                else:
+                    print("No se seleccionó ningún archivo.")
                 print("------------------------------------")
                 print("Volviendo al menu.")
                 print("------------------------------------")
@@ -31,7 +54,9 @@ def menu():
             case 3:
                 #? Crear informe de inventario
                 print("Crear informe de inventario")
-                cargar_inventario.mostrar_inventario()
+                print("Inventario:")
+                for producto in inventario:
+                    print(f"{producto['nombre']} - {producto['cantidad']} - {producto['precio_unitario']} - {producto['ubicacion']}")
                 menu()
             case 4:
                 #? Salir
