@@ -95,7 +95,7 @@ def menu():
                 #? Crear informe de inventario
                 print("Crear informe de inventario")
                 try:
-                    with open("inventario.txt", "w+") as archivo:
+                    with open("FP_S2_2023_Practica_202201117/Archivos/inventario.txt", "w+") as archivo:
                         inventario.sort(key=lambda producto: producto['nombre']) #? Motodo sort para ordenar alfabeticamente los articulos
                         for producto in inventario:
                             archivo.write(f"Nombre: {producto['nombre']} - Cantidad: {producto['cantidad']} - Precio: Q{producto['precio_unitario']} - Valor Total: Q{(round(producto['cantidad']*producto['precio_unitario'],2))}- Ubicacion: {producto['ubicacion']}\n")
