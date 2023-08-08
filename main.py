@@ -1,6 +1,8 @@
 from tkinter import Tk
 from tkinter.filedialog import askopenfilename
 inventario = []
+agregar_stock = []
+vender = [ ]
 def menu():
     print("# Sistema de inventario:")
     print("")
@@ -50,13 +52,55 @@ def menu():
             case 2:
                 #? Cargar instrucciones de movimiento
                 print("Cargar instrucciones de movimiento")
+                Tk().withdraw() #! Abre un explorador de Archivos
+                #! Extensiones de archivos permitidas
+                extensiones = [("Archivo MOV", "*.mov")]
+                #! Filtro para encontrar solo archivos con extension .mov
+                filename = askopenfilename(filetypes=extensiones)
+                if filename:
+                    with open(filename, 'r') as archivo:
+                        print("Creando productos")
+                        for linea in archivo:
+                            if linea.startswith("agregar_stock"):
+                                linea = linea[len("agregar_stock "):]
+                                datos_producto = linea.strip().split(';')
+                                producto = {
+                                    'nombre': datos_producto[0],
+                                    'cantidad': int(datos_producto[1]),
+                                    'ubicacion': datos_producto[2]
+                                }
+                                agregar_stock.append(producto) 
+                            if linea.startswith("vender_producto"):
+                                linea = linea[len("vender_producto "):]
+                                datos_producto = linea.strip().split(';')
+                                producto = {
+                                    'nombre': datos_producto[0],
+                                    'cantidad': int(datos_producto[1]),
+                                    'ubicacion': datos_producto[2]
+                                }
+                                vender.append(producto)
+                        
+                else:
+                    print("No se seleccionó ningún archivo.")
+                print("------------------------------------")
+                print("Ventas")
+                for producto in vender:
+                    print(f"{producto['nombre']} - {producto['cantidad']} - {producto['ubicacion']}")
+                print("------------------------------------")
+                print("Stock")
+                for producto in agregar_stock:
+                    print(f"{producto['nombre']} - {producto['cantidad']} - {producto['ubicacion']}")
                 menu()
             case 3:
                 #? Crear informe de inventario
                 print("Crear informe de inventario")
-                print("Inventario:")
-                for producto in inventario:
-                    print(f"{producto['nombre']} - {producto['cantidad']} - {producto['precio_unitario']} - {producto['ubicacion']}")
+                try:
+                    with open("inventario.txt", "w+") as archivo:
+                        inventario.sort(key=lambda producto: producto['nombre']) #? Motodo sort para ordenar alfabeticamente los articulos
+                        for producto in inventario:
+                            archivo.write(f"Nombre: {producto['nombre']} - Cantidad: {producto['cantidad']} - Precio: Q{producto['precio_unitario']} - Valor Total: Q{(round(producto['cantidad']*producto['precio_unitario'],2))}- Ubicacion: {producto['ubicacion']}\n")
+                except:
+                    print("Error al crear el archivo")
                 menu()
             case 4:
                 #? Salir
