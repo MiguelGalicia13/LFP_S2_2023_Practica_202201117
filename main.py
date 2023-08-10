@@ -72,7 +72,7 @@ def menu():
                                     if inventario[i]['nombre'] == producto['nombre'] and inventario[i]['ubicacion'] == producto['ubicacion']:
                                         inventario[i]['cantidad'] += producto['cantidad']
                                     else:
-                                        inventario.append(producto)
+                                        print("El producto no existe en el inventario")
                             if linea.startswith("vender_producto"):
                                 linea = linea[len("vender_producto "):]
                                 datos_producto = linea.strip().split(';')
@@ -84,7 +84,11 @@ def menu():
                                 #? Si el producto existe y se encuentra en la misma bodaga se resta la cantidad
                                 for i in range(len(inventario)):
                                     if inventario[i]['nombre'] == producto['nombre'] and inventario[i]['ubicacion'] == producto['ubicacion']:
-                                        inventario[i]['cantidad'] -= producto['cantidad']
+                                        if inventario[i]['cantidad'] <= producto['cantidad']:
+                                            print("No hay suficiente producto en el inventario")
+                                        else: inventario[i]['cantidad'] -= producto['cantidad']
+                                    else:
+                                        print("El producto no existe en el inventario")
                         
                 else:
                     print("No se seleccionó ningún archivo.")
@@ -96,8 +100,10 @@ def menu():
                 try:
                     with open("FP_S2_2023_Practica_202201117/Archivos/inventario.txt", "w+") as archivo:
                         inventario.sort(key=lambda producto: producto['nombre']) #? Motodo sort para ordenar alfabeticamente los articulos
+                        archivo.write("Producto     Cantidad     Precio     Valor Total     Ubicacion\n")
+                        archivo.write("--------------------------------------------------------------------\n")
                         for producto in inventario:
-                            archivo.write(f"Nombre: {producto['nombre']} - Cantidad: {producto['cantidad']} - Precio: Q{producto['precio_unitario']} - Valor Total: Q{(round(producto['cantidad']*producto['precio_unitario'],2))}- Ubicacion: {producto['ubicacion']}\n")
+                            archivo.write(f"{producto['nombre']}        {producto['cantidad']}        ${producto['precio_unitario']}        ${(round(producto['cantidad']*producto['precio_unitario'],2))}        {producto['ubicacion']}\n")
                 except Exception as e:
                     print("Error al crear el archivo",e)
                 menu()

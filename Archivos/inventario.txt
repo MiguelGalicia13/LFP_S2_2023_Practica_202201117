@@ -1,50 +1,52 @@
-Nombre: Agua - Cantidad: 206 - Precio: Q1.2 - Valor Total: Q247.2- Ubicacion: BodegaO
-Nombre: Auriculares - Cantidad: 18 - Precio: Q29.99 - Valor Total: Q539.82- Ubicacion: BodegaF
-Nombre: Baguette - Cantidad: 31 - Precio: Q1.0 - Valor Total: Q31.0- Ubicacion: BodegaS
-Nombre: Boligrafos - Cantidad: 530 - Precio: Q0.5 - Valor Total: Q265.0- Ubicacion: BodegaE
-Nombre: Bolso - Cantidad: 28 - Precio: Q45.0 - Valor Total: Q1260.0- Ubicacion: BodegaM
-Nombre: Bolso - Cantidad: 19 - Precio: Q25.99 - Valor Total: Q493.81- Ubicacion: BodegaW
-Nombre: Camisa - Cantidad: 65 - Precio: Q18.99 - Valor Total: Q1234.35- Ubicacion: BodegaR
-Nombre: Camiseta - Cantidad: 48 - Precio: Q12.99 - Valor Total: Q623.52- Ubicacion: BodegaD
-Nombre: Cebollas - Cantidad: 104 - Precio: Q0.7 - Valor Total: Q72.8- Ubicacion: BodegaH
-Nombre: Celular - Cantidad: 9 - Precio: Q399.0 - Valor Total: Q3591.0- Ubicacion: BodegaU
-Nombre: Cereal - Cantidad: 18 - Precio: Q4.0 - Valor Total: Q72.0- Ubicacion: BodegaQ
-Nombre: Cereales - Cantidad: 34 - Precio: Q3.8 - Valor Total: Q129.2- Ubicacion: BodegaL
-Nombre: Cuadernos - Cantidad: 117 - Precio: Q1.25 - Valor Total: Q146.25- Ubicacion: BodegaG
-Nombre: Gafas_de_lectura - Cantidad: 12 - Precio: Q9.99 - Valor Total: Q119.88- Ubicacion: BodegaX
-Nombre: Gafas_de_sol - Cantidad: 8 - Precio: Q35.0 - Valor Total: Q280.0- Ubicacion: BodegaK
-Nombre: Galletas - Cantidad: 315 - Precio: Q2.0 - Valor Total: Q630.0- Ubicacion: BodegaN
-Nombre: Helado - Cantidad: 33 - Precio: Q3.5 - Valor Total: Q115.5- Ubicacion: BodegaT
-Nombre: Jabon - Cantidad: 46 - Precio: Q2.2 - Valor Total: Q101.2- Ubicacion: BodegaR
-Nombre: Lapices - Cantidad: 215 - Precio: Q0.3 - Valor Total: Q64.5- Ubicacion: BodegaC
-Nombre: Leche - Cantidad: 52 - Precio: Q1.8 - Valor Total: Q93.6- Ubicacion: BodegaB
-Nombre: Lechuga - Cantidad: 30 - Precio: Q1.2 - Valor Total: Q36.0- Ubicacion: BodegaU
-Nombre: Libreta - Cantidad: 88 - Precio: Q1.0 - Valor Total: Q88.0- Ubicacion: BodegaM
-Nombre: Manzanas - Cantidad: 100 - Precio: Q2.5 - Valor Total: Q250.0- Ubicacion: BodegaA
-Nombre: Mochila - Cantidad: 53 - Precio: Q20.5 - Valor Total: Q1086.5- Ubicacion: BodegaP
-Nombre: Naranjas - Cantidad: 97 - Precio: Q1.0 - Valor Total: Q97.0- Ubicacion: BodegaX
-Nombre: Pan - Cantidad: 95 - Precio: Q2.5 - Valor Total: Q237.5- Ubicacion: BodegaZ
-Nombre: Pantalones - Cantidad: 48 - Precio: Q29.99 - Valor Total: Q1439.52- Ubicacion: BodegaI
-Nombre: Pantalones_cortos - Cantidad: 24 - Precio: Q15.5 - Valor Total: Q372.0- Ubicacion: BodegaN
-Nombre: Papas - Cantidad: 210 - Precio: Q0.9 - Valor Total: Q189.0- Ubicacion: BodegaC
-Nombre: Papel_Higienico - Cantidad: 122 - Precio: Q0.8 - Valor Total: Q97.6- Ubicacion: BodegaY
-Nombre: Pendientes - Cantidad: 44 - Precio: Q8.5 - Valor Total: Q374.0- Ubicacion: BodegaT
-Nombre: Perfume - Cantidad: 5 - Precio: Q60.0 - Valor Total: Q300.0- Ubicacion: BodegaV
-Nombre: Platanos - Cantidad: 125 - Precio: Q0.8 - Valor Total: Q100.0- Ubicacion: BodegaL
-Nombre: Portatil - Cantidad: 6 - Precio: Q699.0 - Valor Total: Q4194.0- Ubicacion: BodegaQ
-Nombre: Queso - Cantidad: 11 - Precio: Q3.5 - Valor Total: Q38.5- Ubicacion: BodegaK
-Nombre: Reloj - Cantidad: 5 - Precio: Q99.99 - Valor Total: Q499.95- Ubicacion: BodegaA
-Nombre: Sabanas - Cantidad: 11 - Precio: Q19.99 - Valor Total: Q219.89- Ubicacion: BodegaD
-Nombre: Sandalias - Cantidad: 33 - Precio: Q22.0 - Valor Total: Q726.0- Ubicacion: BodegaG
-Nombre: Sillas - Cantidad: 12 - Precio: Q39.99 - Valor Total: Q479.88- Ubicacion: BodegaS
-Nombre: Sillon - Cantidad: 6 - Precio: Q199.99 - Valor Total: Q1199.94- Ubicacion: BodegaO
-Nombre: TV_55 - Cantidad: 2 - Precio: Q799.99 - Valor Total: Q1599.98- Ubicacion: BodegaI
-Nombre: TV_65 - Cantidad: 1 - Precio: Q1199.99 - Valor Total: Q1199.99- Ubicacion: BodegaV
-Nombre: Tarta - Cantidad: 3 - Precio: Q12.0 - Valor Total: Q36.0- Ubicacion: BodegaP
-Nombre: Taza - Cantidad: 48 - Precio: Q5.99 - Valor Total: Q287.52- Ubicacion: BodegaJ
-Nombre: Televisor - Cantidad: 7 - Precio: Q499.99 - Valor Total: Q3499.93- Ubicacion: BodegaH
-Nombre: Tomates - Cantidad: 168 - Precio: Q0.6 - Valor Total: Q100.8- Ubicacion: BodegaJ
-Nombre: Tostadas - Cantidad: 82 - Precio: Q1.5 - Valor Total: Q123.0- Ubicacion: BodegaE
-Nombre: Vaso - Cantidad: 60 - Precio: Q2.5 - Valor Total: Q150.0- Ubicacion: BodegaW
-Nombre: Yogur - Cantidad: 26 - Precio: Q1.2 - Valor Total: Q31.2- Ubicacion: BodegaB
-Nombre: Zapatillas - Cantidad: 27 - Precio: Q34.99 - Valor Total: Q944.73- Ubicacion: BodegaF
+Producto     Cantidad     Precio     Valor Total     Ubicacion
+--------------------------------------------------------------------
+Agua        24        $1.2        $28.8        BodegaO
+Auriculares        5        $29.99        $149.95        BodegaF
+Baguette        5        $1.0        $5.0        BodegaS
+Boligrafos        50        $0.5        $25.0        BodegaE
+Bolso        6        $45.0        $270.0        BodegaM
+Bolso        8        $25.99        $207.92        BodegaW
+Camisa        15        $18.99        $284.85        BodegaR
+Camiseta        20        $12.99        $259.8        BodegaD
+Cebollas        20        $0.7        $14.0        BodegaH
+Celular        2        $399.0        $798.0        BodegaU
+Cereal        5        $4.0        $20.0        BodegaQ
+Cereales        10        $3.8        $38.0        BodegaL
+Cuadernos        25        $1.25        $31.25        BodegaG
+Gafas_de_lectura        4        $9.99        $39.96        BodegaX
+Gafas_de_sol        3        $35.0        $105.0        BodegaK
+Galletas        40        $2.0        $80.0        BodegaN
+Helado        8        $3.5        $28.0        BodegaT
+Jabon        4        $2.2        $8.8        BodegaR
+Lapices        30        $0.3        $9.0        BodegaC
+Leche        5        $1.8        $9.0        BodegaB
+Lechuga        8        $1.2        $9.6        BodegaU
+Libreta        20        $1.0        $20.0        BodegaM
+Manzanas        10        $2.5        $25.0        BodegaA
+Mochila        10        $20.5        $205.0        BodegaP
+Naranjas        25        $1.0        $25.0        BodegaX
+Pan        15        $2.5        $37.5        BodegaZ
+Pantalones        12        $29.99        $359.88        BodegaI
+Pantalones_cortos        6        $15.5        $93.0        BodegaN
+Papas        15        $0.9        $13.5        BodegaC
+Papel_Higienico        12        $0.8        $9.6        BodegaY
+Pendientes        10        $8.5        $85.0        BodegaT
+Perfume        1        $60.0        $60.0        BodegaV
+Platanos        20        $0.8        $16.0        BodegaL
+Portatil        3        $699.0        $2097.0        BodegaQ
+Queso        2        $3.5        $7.0        BodegaK
+Reloj        3        $99.99        $299.97        BodegaA
+Sabanas        2        $19.99        $39.98        BodegaD
+Sandalias        12        $22.0        $264.0        BodegaG
+Sillas        4        $39.99        $159.96        BodegaS
+Sillon        2        $199.99        $399.98        BodegaO
+TV_55        1        $799.99        $799.99        BodegaI
+TV_65        1        $1199.99        $1199.99        BodegaV
+Tarta        1        $12.0        $12.0        BodegaP
+Taza        8        $5.99        $47.92        BodegaJ
+Televisor        3        $499.99        $1499.97        BodegaH
+Tomates        30        $0.6        $18.0        BodegaJ
+Tostadas        10        $1.5        $15.0        BodegaE
+Vaso        12        $2.5        $30.0        BodegaW
+Yogur        6        $1.2        $7.2        BodegaB
+Zapatillas        8        $34.99        $279.92        BodegaF
