@@ -1,8 +1,6 @@
 from tkinter import Tk
 from tkinter.filedialog import askopenfilename
 inventario = []
-agregar_stock = []
-vender = [ ]
 def menu():
     print("# Sistema de inventario:")
     print("")
@@ -69,7 +67,12 @@ def menu():
                                     'cantidad': int(datos_producto[1]),
                                     'ubicacion': datos_producto[2]
                                 }
-                                agregar_stock.append(producto) 
+                                #? Si el producto no existe en el inventario se agrega, pero si existe se suma la cantidad
+                                for i in range(len(inventario)):
+                                    if inventario[i]['nombre'] == producto['nombre'] and inventario[i]['ubicacion'] == producto['ubicacion']:
+                                        inventario[i]['cantidad'] += producto['cantidad']
+                                    else:
+                                        inventario.append(producto)
                             if linea.startswith("vender_producto"):
                                 linea = linea[len("vender_producto "):]
                                 datos_producto = linea.strip().split(';')
@@ -78,18 +81,14 @@ def menu():
                                     'cantidad': int(datos_producto[1]),
                                     'ubicacion': datos_producto[2]
                                 }
-                                vender.append(producto)
+                                #? Si el producto existe y se encuentra en la misma bodaga se resta la cantidad
+                                for i in range(len(inventario)):
+                                    if inventario[i]['nombre'] == producto['nombre'] and inventario[i]['ubicacion'] == producto['ubicacion']:
+                                        inventario[i]['cantidad'] -= producto['cantidad']
                         
                 else:
                     print("No se seleccionó ningún archivo.")
                 print("------------------------------------")
-                print("Ventas")
-                for producto in vender:
-                    print(f"{producto['nombre']} - {producto['cantidad']} - {producto['ubicacion']}")
-                print("------------------------------------")
-                print("Stock")
-                for producto in agregar_stock:
-                    print(f"{producto['nombre']} - {producto['cantidad']} - {producto['ubicacion']}")
                 menu()
             case 3:
                 #? Crear informe de inventario
@@ -99,8 +98,8 @@ def menu():
                         inventario.sort(key=lambda producto: producto['nombre']) #? Motodo sort para ordenar alfabeticamente los articulos
                         for producto in inventario:
                             archivo.write(f"Nombre: {producto['nombre']} - Cantidad: {producto['cantidad']} - Precio: Q{producto['precio_unitario']} - Valor Total: Q{(round(producto['cantidad']*producto['precio_unitario'],2))}- Ubicacion: {producto['ubicacion']}\n")
-                except:
-                    print("Error al crear el archivo")
+                except Exception as e:
+                    print("Error al crear el archivo",e)
                 menu()
             case 4:
                 #? Salir
