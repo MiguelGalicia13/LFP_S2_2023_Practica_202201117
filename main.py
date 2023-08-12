@@ -68,7 +68,7 @@ def menu():
                                     'ubicacion': datos_producto[2]
                                 }
                                 #? Si el producto no existe en el inventario se agrega, pero si existe se suma la cantidad
-                                for i in range(len(inventario)):
+                                for i in range(len(inventario)-1):
                                     if inventario[i]['nombre'] == producto['nombre'] and inventario[i]['ubicacion'] == producto['ubicacion']:
                                         inventario[i]['cantidad'] += producto['cantidad']
                                     else:
