@@ -7,6 +7,8 @@ Al ejecutar el programa, se muestra un menú principal con cuatro opciones: "Car
 
 La primera opción, "Cargar inventario inicial", permite al usuario seleccionar un archivo ".inv" utilizando un explorador de archivos. Si se elige un archivo válido, el programa lee cada línea y crea productos en base a los datos proporcionados. Para cada línea, se elimina la palabra "crear_producto " al inicio antes de procesar los datos. Los productos creados se almacenan en una lista llamada "inventario". Después de cargar el inventario, se muestra un mensaje de éxito y se regresa al menú principal.
 
+https://raw.githubusercontent.com/MiguelGalicia13/LFP_S2_2023_Practica_202201117/master/imagenes_de_codigo/abrir_archivos.png
+
 #### Registrar movimientos ####
 
 Para la segunda opcion donde se deben registrar las ventas o el agregar stock por medio de crear un diccionario llamado producto se agrega a la matriz de inventario principal que junto a un par de condicionales if-else se agregan si encierto caso se agrega stock, o se elimina la cantidad de productos si se realiza una venta, para elegir los archivos igual es manejo con un TK.withdraw que busca solo archivos .MOV en un seleccionador de archivos
