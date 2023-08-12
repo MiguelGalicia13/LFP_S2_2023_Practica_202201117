@@ -7,7 +7,7 @@ Al ejecutar el programa, se muestra un menú principal con cuatro opciones: "Car
 
 La primera opción, "Cargar inventario inicial", permite al usuario seleccionar un archivo ".inv" utilizando un explorador de archivos. Si se elige un archivo válido, el programa lee cada línea y crea productos en base a los datos proporcionados. Para cada línea, se elimina la palabra "crear_producto " al inicio antes de procesar los datos. Los productos creados se almacenan en una lista llamada "inventario". Después de cargar el inventario, se muestra un mensaje de éxito y se regresa al menú principal.
 
-https://raw.githubusercontent.com/MiguelGalicia13/LFP_S2_2023_Practica_202201117/master/imagenes_de_codigo/abrir_archivos.png
+![Agregar archivos](abrir_archivos.png)
 
 #### Registrar movimientos ####
 
