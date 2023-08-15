@@ -1,6 +1,14 @@
-# Manual de Usuario #
-## LFP_S2_2023_Practica_202201117 ##
-### Archivo main.py ###
+# Lenguajes Formales y de Programación
+## Practica 
+### Semestre 2 2023
+```js
+Universidad San Carlos de Guatemala
+Programador: Miguel Ricardo Galicia Urrutia
+Carne: 202201117
+Correo: galiciar319@gmail.com
+```
+---
+## Descripción del Proyecto
 Al ejecutar el programa, se muestra un menú principal con cuatro opciones: "Cargar inventario inicial", "Cargar instrucciones de movimiento", "Crear informe de inventario" y "Salir". El usuario puede seleccionar una opción ingresando el número correspondiente.
 
 #### Cargar inventario ####
