@@ -48,64 +48,68 @@ def menu():
                 print("------------------------------------")
                 menu()
             case 2:
-                #? Cargar instrucciones de movimiento
-                print("Cargar instrucciones de movimiento")
-                Tk().withdraw() #! Abre un explorador de Archivos
-                #! Extensiones de archivos permitidas
-                extensiones = [("Archivo MOV", "*.mov")]
-                #! Filtro para encontrar solo archivos con extension .mov
-                filename = askopenfilename(filetypes=extensiones)
-                if filename:
-                    with open(filename, 'r') as archivo:
-                        print("Creando productos")
-                        for linea in archivo:
-                            if linea.startswith("agregar_stock"):
-                                linea = linea[len("agregar_stock "):]
-                                datos_producto = linea.strip().split(';')
-                                producto = {
-                                    'nombre': datos_producto[0],
-                                    'cantidad': int(datos_producto[1]),
-                                    'ubicacion': datos_producto[2]
-                                }
-                                #? Si el producto no existe en el inventario se agrega, pero si existe se suma la cantidad
-                                for i in range(len(inventario)-1):
-                                    if inventario[i]['nombre'] == producto['nombre'] and inventario[i]['ubicacion'] == producto['ubicacion']:
-                                        inventario[i]['cantidad'] += producto['cantidad']
-                                    else:
-                                        print("El producto no existe en el inventario")
-                            if linea.startswith("vender_producto"):
-                                linea = linea[len("vender_producto "):]
-                                datos_producto = linea.strip().split(';')
-                                producto = {
-                                    'nombre': datos_producto[0],
-                                    'cantidad': int(datos_producto[1]),
-                                    'ubicacion': datos_producto[2]
-                                }
-                                #? Si el producto existe y se encuentra en la misma bodaga se resta la cantidad
-                                for i in range(len(inventario)):
-                                    if inventario[i]['nombre'] == producto['nombre'] and inventario[i]['ubicacion'] == producto['ubicacion']:
-                                        if inventario[i]['cantidad'] <= producto['cantidad']:
-                                            print("No hay suficiente producto en el inventario")
-                                        else: inventario[i]['cantidad'] -= producto['cantidad']
-                                    else:
-                                        print("El producto no existe en el inventario")
-                        
+                if inventario:
+                    #? Cargar instrucciones de movimiento
+                    print("Cargar instrucciones de movimiento")
+                    Tk().withdraw() #! Abre un explorador de Archivos
+                    #! Extensiones de archivos permitidas
+                    extensiones = [("Archivo MOV", "*.mov")]
+                    #! Filtro para encontrar solo archivos con extension .mov
+                    filename = askopenfilename(filetypes=extensiones)
+                    if filename:
+                        with open(filename, 'r') as archivo:
+                            print("Creando productos")
+                            for linea in archivo:
+                                if linea.startswith("agregar_stock"):
+                                    linea = linea[len("agregar_stock "):]
+                                    datos_producto = linea.strip().split(';')
+                                    producto = {
+                                        'nombre': datos_producto[0],
+                                        'cantidad': int(datos_producto[1]),
+                                        'ubicacion': datos_producto[2]
+                                    }
+                                    #? Si el producto no existe en el inventario se agrega, pero si existe se suma la cantidad
+                                    for i in range(len(inventario)-1):
+                                        if inventario[i]['nombre'] == producto['nombre'] and inventario[i]['ubicacion'] == producto['ubicacion']:
+                                            inventario[i]['cantidad'] += producto['cantidad']
+                                        
+                                if linea.startswith("vender_producto"):
+                                    linea = linea[len("vender_producto "):]
+                                    datos_producto = linea.strip().split(';')
+                                    producto = {
+                                        'nombre': datos_producto[0],
+                                        'cantidad': int(datos_producto[1]),
+                                        'ubicacion': datos_producto[2]
+                                    }
+                                    #? Si el producto existe y se encuentra en la misma bodaga se resta la cantidad
+                                    for i in range(len(inventario)):
+                                        if inventario[i]['nombre'] == producto['nombre'] and inventario[i]['ubicacion'] == producto['ubicacion']:
+                                            if inventario[i]['cantidad'] <= producto['cantidad']:
+                                                print("No hay suficiente producto en el inventario para ", producto['nombre']," en ", producto['ubicacion'])
+                                            else: inventario[i]['cantidad'] -= producto['cantidad']
+                                        
+                            
+                    else:
+                        print("No se seleccionó ningún archivo.")
+                    print("------------------------------------")
                 else:
-                    print("No se seleccionó ningún archivo.")
-                print("------------------------------------")
+                    print("No se ha cargado el inventario inicial")
                 menu()
             case 3:
                 #? Crear informe de inventario
-                print("Crear informe de inventario")
-                try:
-                    with open("FP_S2_2023_Practica_202201117/Archivos/inventario.txt", "w+") as archivo:
-                        inventario.sort(key=lambda producto: producto['nombre']) #? Motodo sort para ordenar alfabeticamente los articulos
-                        archivo.write("Producto     Cantidad     Precio     Valor Total     Ubicacion\n")
-                        archivo.write("--------------------------------------------------------------------\n")
-                        for producto in inventario:
-                            archivo.write(f"{producto['nombre']}        {producto['cantidad']}        ${producto['precio_unitario']}        ${(round(producto['cantidad']*producto['precio_unitario'],2))}        {producto['ubicacion']}\n")
-                except Exception as e:
-                    print("Error al crear el archivo",e)
+                if inventario:
+                    print("Crear informe de inventario")
+                    try:
+                        with open("FP_S2_2023_Practica_202201117/Archivos/inventario.txt", "w+") as archivo:
+                            inventario.sort(key=lambda producto: producto['nombre']) #? Motodo sort para ordenar alfabeticamente los articulos
+                            archivo.write("Producto     Cantidad     Precio     Valor Total     Ubicacion\n")
+                            archivo.write("--------------------------------------------------------------------\n")
+                            for producto in inventario:
+                                archivo.write(f"{producto['nombre']}        {producto['cantidad']}        ${producto['precio_unitario']}        ${(round(producto['cantidad']*producto['precio_unitario'],2))}        {producto['ubicacion']}\n")
+                    except Exception as e:
+                        print("Error al crear el archivo",e)
+                else:
+                    print("No se ha cargado el inventario inicial")
                 menu()
             case 4:
                 #? Salir
@@ -116,8 +120,6 @@ def menu():
                 opcion = int(input())
         break
     return
-
-
 
 print("---------------------------------------------------")
 print("Practica 1 - Lenguajes formales y programacion")
